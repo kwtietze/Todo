@@ -1,0 +1,70 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: none;
+    border: none;
+
+}
+
+body {
+    background: #fcd8bf;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    width: 75%;
+    margin: auto;
+}
+
+#newtask {
+    border: solid black 1px;
+    background: white;
+    display: flex;
+    padding: 10px;
+    margin: 10px ;
+}
+
+#todo-input {
+    width: 100%;
+}
+
+#todo-input:focus {
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+#push {
+    float: right;
+}
+
+.task {
+    border: solid black 1px;
+    background: white;
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    align-items: center;
+}
+
+.task button {
+    margin: 0 5px;
+}
+
+#taskname {
+    width: 100%;
+}
+
+.shadow {
+    transition: 0.4s ease;
+}
+
+.shadow:hover {
+    box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+    transform: translate(-8px, -8px);
+}
