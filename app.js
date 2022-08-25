@@ -1,24 +1,26 @@
 const add = document.querySelector('#push')
 const todoInput = document.querySelector('#todo-input')
+let todoId = Date.now()
 
-add.onclick = function() {
+add.onclick = function submitTodo() {
+
+    let todoId = Date.now()
+    
     if (todoInput.value.length == 0) {
         alert('Please Enter a Task')
     }
     else{
         document.querySelector('#tasks').innerHTML += `
-            <div class="task shadow">
-                <span id="taskname">
+            <div id="${todoId}" class="task shadow">
+                <button id="taskname" onclick="doneTodo()">
                     ${todoInput.value}
-                </span>
-                <button class="done">
-                    <span class="material-symbols-outlined">done</span>
                 </button>
                 <button class="delete">
                     <span class="material-symbols-outlined">delete</span>
                 </button>
-            </div>
-        `;
+            </div>`;
+
+        todoInput.value = '';
 
         let currentTasks = document.querySelectorAll('.delete');
         for(var i=0; i<currentTasks.length; i++){
@@ -27,4 +29,13 @@ add.onclick = function() {
             }
         }
     }
+}
+
+function doneTodo() {
+
+    let entry = document.querySelector('#taskname')
+    let taskArea = document.querySelector('.task')
+
+    entry.classList.toggle('strike')
+    taskArea.style.backgroundColor = '#d1d1d1'
 }
